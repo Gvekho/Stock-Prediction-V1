@@ -60,3 +60,6 @@ st.subheader('Forecast data')
 fig2 = plot_plotly(m,forecast)
 st.plotly_chart(fig2)
 
+
+st.markdown('<div class="upper-left">Last update ' + str(today_eu) + '</div>', unsafe_allow_html=True)
+
