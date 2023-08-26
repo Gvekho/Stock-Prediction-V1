@@ -15,12 +15,9 @@ end = date.today().strftime("%Y-%m-%d")
 st.title('Stock Prediction App')
 #st.text(today, align="left", fontsize=8)
 
-# Apply CSS styling to move the text to the left upper corner
-
-
+session_state = SessionState.get(last_update_date="")
 # Add text with today's date using st.markdown and the custom class
-@st.cache_data
-st.markdown('<div class="upper-left">Last update ' + str(today_eu) + '</div>', unsafe_allow_html=True)
+st.markdown('<div class="upper-left">Last update ' + str(session_state) + '</div>', unsafe_allow_html=True)
 
 
 
@@ -30,7 +27,7 @@ slected_stock = st.selectbox('Select Stocks', stocks)
 n_years = st.slider('Years of prediction', 1, 4)
 period = n_years*365
 
-#@st.cache_data
+@st.cache_data
 def load_data(stock):
     data  = yf.download(stock,start,end)
     data.reset_index(inplace=True)
