@@ -65,6 +65,7 @@ def last_day()
     today = datetime.date.today()
     today_eu = date.today().strftime("%d/%m/%Y")
     return today_eu
-    
-st.markdown('<div class="upper-left">Last update ' + str(last_day()) + '</div>', unsafe_allow_html=True)
+
+lastday = last_day()
+st.markdown('<div class="upper-left">Last update ' + str(lastday) + '</div>', unsafe_allow_html=True)
 
