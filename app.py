@@ -16,7 +16,7 @@ st.title('Stock Prediction App')
 #st.text(today, align="left", fontsize=8)
 
 # Add text with today's date using st.markdown and the custom class
-st.markdown('<div class="upper-left">Last update ' + str(session_state) + '</div>', unsafe_allow_html=True)
+st.markdown('<div class="upper-left">Last update ' + str(today_eu) + '</div>', unsafe_allow_html=True)
 
 
 
@@ -58,7 +58,7 @@ st.subheader('Forecast data')
 fig2 = plot_plotly(m,forecast)
 st.plotly_chart(fig2)
 
-st.markdown('<div class="upper-left">Last update ' + str(session_state) + '</div>', unsafe_allow_html=True)
+st.markdown('<div class="upper-left">Last update ' + str(today_eu) + '</div>', unsafe_allow_html=True)
 
 
 
