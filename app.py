@@ -60,7 +60,7 @@ st.subheader('Forecast data')
 fig2 = plot_plotly(m,forecast)
 st.plotly_chart(fig2)
 
-def last_day()
+def last_day():
     today = datetime.date.today()
     today_eu = date.today().strftime("%d/%m/%Y")
     return today_eu
