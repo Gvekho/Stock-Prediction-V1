@@ -6,7 +6,7 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objects as go
 
-@st.cache_data
+
 today = datetime.date.today()
 today_eu = date.today().strftime("%d/%m/%Y")
 start = today - datetime.timedelta(days=365.25 * 5)
