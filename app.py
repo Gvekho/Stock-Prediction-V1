@@ -6,6 +6,7 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objects as go
 
+@st.cache_data
 today = datetime.date.today()
 today_eu = date.today().strftime("%d/%m/%Y")
 start = today - datetime.timedelta(days=365.25 * 5)
@@ -18,6 +19,7 @@ st.title('Stock Prediction App')
 
 
 # Add text with today's date using st.markdown and the custom class
+@st.cache_data
 st.markdown('<div class="upper-left">Last update ' + str(today_eu) + '</div>', unsafe_allow_html=True)
 
 
