@@ -27,7 +27,6 @@ n_years = st.slider('Years of prediction', 1, 4)
 period = n_years*365
 
 @st.cache_data
-st.markdown('<div class="upper-left">Last update ' + str(session_state) + '</div>', unsafe_allow_html=True)
 def load_data(stock):
     data  = yf.download(stock,start,end)
     data.reset_index(inplace=True)
@@ -58,6 +57,8 @@ forecast = m.predict(future)
 st.subheader('Forecast data')
 fig2 = plot_plotly(m,forecast)
 st.plotly_chart(fig2)
+
+st.markdown('<div class="upper-left">Last update ' + str(session_state) + '</div>', unsafe_allow_html=True)
 
 
 
