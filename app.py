@@ -5,7 +5,6 @@ import yfinance as yf
 from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objects as go
-from streamlit import SessionState
 
 
 today = datetime.date.today()
@@ -16,7 +15,7 @@ end = date.today().strftime("%Y-%m-%d")
 st.title('Stock Prediction App')
 #st.text(today, align="left", fontsize=8)
 
-session_state = SessionState.get(last_update_date="")
+session_state = st.SessionState.get(last_update_date="")
 # Add text with today's date using st.markdown and the custom class
 st.markdown('<div class="upper-left">Last update ' + str(session_state) + '</div>', unsafe_allow_html=True)
 
