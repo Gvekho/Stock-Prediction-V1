@@ -6,7 +6,6 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objects as go
 
-
 today = datetime.date.today()
 today_eu = date.today().strftime("%d/%m/%Y")
 start = today - datetime.timedelta(days=365.25 * 5)
@@ -14,6 +13,9 @@ end = date.today().strftime("%Y-%m-%d")
 
 st.title('Stock Prediction App')
 #st.text(today, align="left", fontsize=8)
+
+# Apply CSS styling to move the text to the left upper corner
+
 
 # Add text with today's date using st.markdown and the custom class
 st.markdown('<div class="upper-left">Last update ' + str(today_eu) + '</div>', unsafe_allow_html=True)
@@ -57,9 +59,4 @@ forecast = m.predict(future)
 st.subheader('Forecast data')
 fig2 = plot_plotly(m,forecast)
 st.plotly_chart(fig2)
-
-st.markdown('<div class="upper-left">Last update ' + str(today_eu) + '</div>', unsafe_allow_html=True)
-
-
-
 
