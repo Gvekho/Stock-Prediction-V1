@@ -58,14 +58,6 @@ forecast = m.predict(future)
 # Plot forecast
 st.subheader('Forecast data')
 fig2 = plot_plotly(m, forecast)
-
-# Extracting forecasted values and dates
-forecast_values = forecast[['ds', 'yhat']]
-forecast_values.rename(columns={'yhat': 'Forecasted Value'}, inplace=True)
-
-# Plotting the forecasted values against dates
-fig2 = go.Figure()
-fig2.add_trace(go.Scatter(x=forecast_values['ds'], y=forecast_values['Forecasted Value'], mode='lines', name='Forecasted Value'))
 fig2.layout.update(title_text='Forecasted Stock Prices', xaxis_title='Date', yaxis_title='Forecasted Value')
 st.plotly_chart(fig2)
 
