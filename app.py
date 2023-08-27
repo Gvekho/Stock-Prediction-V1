@@ -60,12 +60,12 @@ st.subheader('Forecast data')
 fig2 = plot_plotly(m,forecast)
 st.plotly_chart(fig2)
 
-'''@st.cache_data
-def last_day():
-    today = datetime.date.today()
-    data = date.today().strftime("%d/%m/%Y")
-    return data
+#@st.cache_data
+#def last_day():
+#    today = datetime.date.today()
+#    data = date.today().strftime("%d/%m/%Y")
+#    return data
 
-data = last_day()
-st.markdown('<div class="upper-left">Last update ' + str(data) + '</div>', unsafe_allow_html=True)'''
+#data = last_day()
+#st.markdown('<div class="upper-left">Last update ' + str(data) + '</div>', unsafe_allow_html=True)
 
